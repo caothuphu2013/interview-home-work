@@ -3,6 +3,7 @@ import { RoutePath } from '../constants/config';
 import notAuthenticated from './notAuthenticated';
 import withAuthorize from './withAuthorize';
 
+const RegisterPage = lazy(() => import('../pages/RegisterPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage'));
 const LogoutPage = lazy(() => import('../pages/LogoutPage'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
@@ -11,6 +12,12 @@ const PostPage = lazy(() => import('../pages/PostPage'));
 
 const AppRoutes = {
   getRoutes: () => [
+    {
+      path: RoutePath.register,
+      component: notAuthenticated(RegisterPage),
+      exact: true,
+      isPrivate: false
+    },
     {
       path: RoutePath.login,
       component: notAuthenticated(LoginPage),

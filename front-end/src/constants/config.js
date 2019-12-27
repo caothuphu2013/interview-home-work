@@ -15,6 +15,7 @@ export const TAGS = {
 };
 
 export const RoutePath = {
+  register: '/register',
   login: '/login',
   logout: '/logout',
   pageNotFound: '/page-not-found',

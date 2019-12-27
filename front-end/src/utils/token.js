@@ -1,7 +1,8 @@
-const rand = () => {
-  return Math.random().toString(36).substr(2);
+const token = {
+  getToken: () => localStorage.getItem('token'),
+  setToken: (token) => localStorage.setItem('token', token),
+  removeToken: () => localStorage.removeItem('token'),
+  isAuthenticated: () => (token.getToken() ? true : false)
 };
 
-export const generateToken = () => {
-  return rand() + rand();
-};
+export default token;

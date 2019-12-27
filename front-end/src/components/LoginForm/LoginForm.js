@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Form, Icon, Input, Button, Checkbox, Spin, Alert } from "antd";
 import "./styles.scss";
 const FormItem = Form.Item;
@@ -47,9 +48,8 @@ const LoginForm = props => {
         {getFieldDecorator("password", {
           rules: [{ required: true, message: "Please input your Password!" }]
         })(
-          <Input
+          <Input.Password
             prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
-            type="password"
             placeholder="Password"
           />
         )}
@@ -63,6 +63,7 @@ const LoginForm = props => {
         <Button type="primary" htmlType="submit" className="login-form__button">
           Login
         </Button>
+        Or <Link to='/register'>register now!</Link>
       </FormItem>
     </>
   );

@@ -1,11 +1,14 @@
 import { get as _get } from 'lodash';
-import usersData from '../data/users.json';
+import appFetch from '../utils/appFetch';
 
 const login = (payload) => {
   const username = _get(payload, 'username', '');
   const password = _get(payload, 'password', '');
 
-  return usersData.find((user) => user.username === username || user.password === password);
+  return appFetch.post('login', {
+    username,
+    password
+  });
 };
 
 export default {

@@ -4,27 +4,25 @@ import * as userIdentityActions from '../actions/userIdentity';
 
 import { AUTH } from '../../constants/actionTypes';
 import authServices from '../../services/auth';
-import { generateToken } from '../../utils/token';
+import { get as _get } from 'lodash';
 
 export function* login(action) {
   try {
     const { payload } = action;
-    const user = yield call(authServices.login, payload);
+    const response = yield call(authServices.login, payload);
     yield delay(1000);
-    if (user) {
-      const { id } = user;
-      yield put(authActions.loginSuccess({userId: id, token: generateToken()}));
-      yield put(userIdentityActions.getUserIdentityRequest(id));
-    } else {
-      yield put(authActions.loginFailure('Invalid username or password'));
-    }
-
+    const { username, accessToken } = response.data;
+    yield put(authActions.loginSuccess({username, token: accessToken}));
+    localStorage.setItem('token', accessToken);
+    yield put(userIdentityActions.getUserIdentityRequest(username));
   } catch (error) {
-    yield put(authActions.loginFailure(error));
+    const messageError = _get(error, 'response.data.messageError', 'Error')
+    yield put(authActions.loginFailure(messageError));
   }
 }
 
 export function* logout() {
+  localStorage.clear();
   yield put(authActions.logoutSuccess());
 }
 

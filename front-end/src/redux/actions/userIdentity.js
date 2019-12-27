@@ -1,9 +1,9 @@
 import { USER_IDENTITY } from '../../constants/actionTypes';
 
-export const getUserIdentityRequest = (userId) => ({
+export const getUserIdentityRequest = (username) => ({
   type: USER_IDENTITY.USER_IDENTITY_GET_INFO_REQUEST,
   payload: {
-    userId
+    username
   }
 });
 

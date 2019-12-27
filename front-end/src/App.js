@@ -10,11 +10,11 @@ import "antd/dist/antd.css";
 
 const App = props => {
   const { authReducer, userIdentityActions } = props;
-  const { isAuthenticated, userId } = authReducer;
+  const { isAuthenticated, username } = authReducer;
 
   useEffect(() => {
     if (isAuthenticated) {
-      userIdentityActions.getUserIdentityRequest(userId);
+      userIdentityActions.getUserIdentityRequest(username);
     }
   }, []);
 

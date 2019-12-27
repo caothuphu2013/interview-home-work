@@ -2,15 +2,17 @@ import { put, call, all, takeLatest } from 'redux-saga/effects';
 import * as userIdentityActions from '../actions/userIdentity';
 import userIdentityServices from '../../services/userIdentity';
 import { USER_IDENTITY } from '../../constants/actionTypes';
+import { get as _get } from 'lodash';
 
 export function* getUserIdentity(action) {
   try {
     const { payload } = action;
-    const { userId } = payload;
-    const response = yield call(userIdentityServices.getUserIdentity, userId);
-    yield put(userIdentityActions.getUserIdentitySuccess(response));
+    const { username } = payload;
+    const response = yield call(userIdentityServices.getUserIdentity, username);
+    yield put(userIdentityActions.getUserIdentitySuccess(response.data));
   } catch (error) {
-    yield put(userIdentityActions.getUserIdentityFailure(error));
+    const messageError = _get(error, 'response.data.messageError', 'Error')
+    yield put(userIdentityActions.getUserIdentityFailure(messageError));
   }
 }
 

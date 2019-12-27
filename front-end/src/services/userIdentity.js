@@ -1,7 +1,12 @@
-import usersData from '../data/users.json';
+import appFetch from '../utils/appFetch';
 
-export const getUserIdentity = (userId) => {
-  return usersData.find(user => user.id === userId);
+export const getUserIdentity = (username) => {
+  const token = localStorage.getItem('token');
+  return appFetch.get(`user?username=${username}`, {
+    headers: {
+      x_access_token: token
+    } 
+  });
 }
 
 export default {

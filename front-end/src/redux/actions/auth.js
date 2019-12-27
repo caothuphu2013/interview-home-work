@@ -5,10 +5,10 @@ export const loginRequest = (payload) => ({
   payload
 });
 
-export const loginSuccess = ({ token, userId }) => ({
+export const loginSuccess = ({ token, username }) => ({
   type: AUTH.AUTH_LOGIN_SUCCESS,
   payload: {
-    userId,
+    username,
     token
   }
 });

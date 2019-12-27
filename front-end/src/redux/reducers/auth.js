@@ -4,7 +4,7 @@ import { get as _get } from 'lodash';
 const initialState = {
   isFetching: false,
   isAuthenticated: false,
-  userId: '',
+  username: '',
   error: ''
 };
 
@@ -14,7 +14,7 @@ const authReducer = (state = initialState, action) => {
       return {
         ...state,
         isAuthenticated: false,
-        userId: '',
+        username: '',
         isFetching: true
       }
     }
@@ -22,7 +22,7 @@ const authReducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: false,
-        userId: _get(action, 'payload.userId', ''),
+        username: _get(action, 'payload.username', ''),
         isAuthenticated: true,
         error: ''
       }

@@ -1,0 +1,27 @@
+.dropdownMenuOverlay {
+  border-right-width: 0;
+  padding: 0;
+  position: fixed;
+  margin-right: 100;
+  right: 100;
+}
+
+.userNameItem,
+.userNameItem:hover {
+  background-color: #002433;
+  color: white;
+  cursor: auto;
+}
+
+.avatarUser {
+  background-color: transparent;
+  border: 1px solid black;
+  cursor: pointer;
+  color: black;
+  margin-left: 30px;
+
+  &:hover {
+    background-color: #002433 !important;
+    color: white !important;
+  }
+}

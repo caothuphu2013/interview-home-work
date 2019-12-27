@@ -1,0 +1,16 @@
+.header {
+  background: #fff !important;
+  position: fixed;
+  z-index: 1;
+  width: 100% !important;
+
+  &__logo {
+    img {
+      width: 40%;
+    }
+  }
+
+  &__searchBar {
+    float: right;
+  }
+}

@@ -9,14 +9,14 @@ const initialState = {
 };
 
 const userIdentityReducer = (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case USER_IDENTITY.USER_IDENTITY_GET_INFO_REQUEST: {
       return {
         ...state,
         isFetching: true,
         name: '',
         dob: ''
-      }
+      };
     }
     case USER_IDENTITY.USER_IDENTITY_GET_INFO_SUCCESS: {
       return {
@@ -25,7 +25,7 @@ const userIdentityReducer = (state = initialState, action) => {
         name: _get(action, 'payload.data.name', ''),
         dob: _get(action, 'payload.data.dob', ''),
         error: ''
-      }
+      };
     }
     case USER_IDENTITY.USER_IDENTITY_GET_INFO_FAILURE: {
       return {
@@ -34,11 +34,11 @@ const userIdentityReducer = (state = initialState, action) => {
         name: '',
         dob: '',
         error: _get(action, 'payload.error', 'Cannot get user identity')
-      }
+      };
     }
     default:
       return state;
   }
-}
+};
 
 export default userIdentityReducer;

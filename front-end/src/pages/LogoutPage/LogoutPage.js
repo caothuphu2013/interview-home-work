@@ -13,18 +13,18 @@ const Logout = (props) => {
   }, []);
 
   if (!isAuthenticated) {
-    return <Redirect to='/login' />
+    return <Redirect to="/login" />;
   }
 
-  return <p>Logout</p>
-}
+  return <p>Logout</p>;
+};
 
-const mapStateToProps = ({authReducer}) => ({
+const mapStateToProps = ({ authReducer }) => ({
   isAuthenticated: _get(authReducer, 'isAuthenticated', false)
 });
 
 const mapDispatchToProps = (dispatch) => ({
   authActions: bindActionCreators(authActions, dispatch)
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Logout);

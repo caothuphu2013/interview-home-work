@@ -3,7 +3,7 @@ import { Spin } from 'antd';
 import './styles.scss';
 
 const LoaderIcon = (props) => (
-  <div className='loader-icon'>
+  <div className="loader-icon">
     <Spin {...props}>{props.children}</Spin>
   </div>
 );

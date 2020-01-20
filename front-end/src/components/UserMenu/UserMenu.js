@@ -17,7 +17,7 @@ const UserMenu = ({ name, history, avatarSrc, ...restProps }) => (
     }
     placement="bottomRight"
   >
-    <Avatar icon="user" src={avatarSrc} className='avatarUser' />
+    <Avatar icon="user" src={avatarSrc} className="avatarUser" />
   </Dropdown>
 );
 

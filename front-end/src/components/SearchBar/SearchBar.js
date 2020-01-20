@@ -1,5 +1,5 @@
-import React from "react";
-import { Input } from "antd";
+import React from 'react';
+import { Input } from 'antd';
 
 const { Search } = Input;
 
@@ -10,13 +10,7 @@ const SearchBar = (props) => {
     searchPostsRequest(e.target.value);
   };
 
-  return (
-    <Search
-      placeholder="input search text"
-      onChange ={handleSearch}
-      style={{ width: 200 }}
-    />
-  );
+  return <Search placeholder="input search text" onChange={handleSearch} style={{ width: 200 }} />;
 };
 
 export default SearchBar;

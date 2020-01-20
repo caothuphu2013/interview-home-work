@@ -1,4 +1,4 @@
-import { DETAIL } from "../../constants/actionTypes";
+import { DETAIL } from '../../constants/actionTypes';
 
 export const getDetailPostByIdRequest = (id) => ({
   type: DETAIL.DETAIL_GET_POST_BY_ID_REQUEST,

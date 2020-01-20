@@ -10,7 +10,7 @@ const Post = (props) => {
   return (
     <div className="post-section">
       <PostHeader {...props} />
-      <PostContent isDetail={isDetail} idPost={id} content={content}/>
+      <PostContent isDetail={isDetail} idPost={id} content={content} />
       <PostComment comments={comments} />
     </div>
   );

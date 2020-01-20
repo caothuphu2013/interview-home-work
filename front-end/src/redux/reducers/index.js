@@ -6,7 +6,6 @@ import detailReducer from './detail';
 import postsReducer from './posts';
 import userIdentityReducer from './userIdentity';
 
-
 export default combineReducers({
   authReducer,
   commentsReducer,

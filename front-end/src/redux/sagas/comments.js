@@ -5,7 +5,6 @@ import * as commentsActions from '../actions/comments';
 import commentsServices from '../../services/comments';
 import { COMMENTS } from '../../constants/actionTypes';
 
-
 export function* getAllComments() {
   try {
     const response = yield call(commentsServices.getAllComments);
@@ -26,8 +25,5 @@ export function* getCommentByIdPost(action) {
 }
 
 export default function* root() {
-  yield all([
-    takeEvery(COMMENTS.COMMENTS_GET_ALL_REQUEST, getAllComments),
-    takeEvery(COMMENTS.COMMENTS_GET_BY_ID_POST_REQUEST, getCommentByIdPost),
-  ]);
+  yield all([takeEvery(COMMENTS.COMMENTS_GET_ALL_REQUEST, getAllComments), takeEvery(COMMENTS.COMMENTS_GET_BY_ID_POST_REQUEST, getCommentByIdPost)]);
 }

@@ -6,10 +6,10 @@ export const getUserIdentity = (username) => {
   return appFetch.get(`user?username=${username}`, {
     headers: {
       x_access_token: token
-    } 
+    }
   });
-}
+};
 
 export default {
   getUserIdentity
-}
+};

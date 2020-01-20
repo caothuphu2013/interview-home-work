@@ -11,13 +11,11 @@ export function* getUserIdentity(action) {
     const response = yield call(userIdentityServices.getUserIdentity, username);
     yield put(userIdentityActions.getUserIdentitySuccess(response.data));
   } catch (error) {
-    const messageError = _get(error, 'response.data.messageError', 'Error')
+    const messageError = _get(error, 'response.data.messageError', 'Error');
     yield put(userIdentityActions.getUserIdentityFailure(messageError));
   }
 }
 
 export default function* root() {
-  yield all([
-    takeLatest(USER_IDENTITY.USER_IDENTITY_GET_INFO_REQUEST, getUserIdentity)
-  ])
+  yield all([takeLatest(USER_IDENTITY.USER_IDENTITY_GET_INFO_REQUEST, getUserIdentity)]);
 }

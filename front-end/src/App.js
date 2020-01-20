@@ -1,12 +1,12 @@
-import React, { Suspense, useEffect } from "react";
-import { connect } from "react-redux";
-import { Switch, Route, Redirect } from "react-router-dom";
-import { RoutePath } from "./constants/config";
-import AppRoutes from "./routes";
+import React, { Suspense, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { RoutePath } from './constants/config';
+import AppRoutes from './routes';
 import { Spin } from 'antd';
 import * as userIdentityActions from './redux/actions/userIdentity';
-import { bindActionCreators } from "redux";
-import "antd/dist/antd.css";
+import { bindActionCreators } from 'redux';
+import 'antd/dist/antd.css';
 
 const App = (props) => {
   const { authReducer, userIdentityActions } = props;
@@ -19,7 +19,7 @@ const App = (props) => {
   }, []);
 
   return (
-    <Suspense fallback={<Spin/>}>
+    <Suspense fallback={<Spin />}>
       <Switch>
         {AppRoutes.getRoutes().map((route) => {
           if (route.isPrivate) {
@@ -42,6 +42,6 @@ const mapStateToProps = ({ authReducer }) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   userIdentityActions: bindActionCreators(userIdentityActions, dispatch)
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

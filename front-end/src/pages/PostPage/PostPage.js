@@ -16,11 +16,7 @@ const PostPage = (props) => {
     detailActions.getDetailPostByIdRequest(id);
   }, []);
 
-  return (
-    <MainLayout>
-      {!_isEmpty(post) && <Post {...post} isDetail />}
-    </MainLayout>
-  );
+  return <MainLayout>{!_isEmpty(post) && <Post {...post} isDetail />}</MainLayout>;
 };
 
 const mapStateToProps = ({ detailReducer }) => ({

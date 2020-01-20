@@ -10,21 +10,21 @@ const initialState = {
 };
 
 const authReducer = (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case AUTH.AUTH_REGISTER_REQUEST: {
       return {
         ...state,
         isRegistered: false,
         isFetching: true,
         error: ''
-      }
+      };
     }
     case AUTH.AUTH_REGISTER_SUCCESS: {
       return {
         ...state,
         isRegistered: true,
         isFetching: false
-      }
+      };
     }
     case AUTH.AUTH_REGISTER_FAILURE: {
       return {
@@ -32,7 +32,7 @@ const authReducer = (state = initialState, action) => {
         isRegistered: false,
         isFetching: false,
         error: _get(action, 'payload.error', '')
-      }
+      };
     }
     case AUTH.AUTH_LOGIN_REQUEST: {
       return {
@@ -40,7 +40,7 @@ const authReducer = (state = initialState, action) => {
         isAuthenticated: false,
         username: '',
         isFetching: true
-      }
+      };
     }
     case AUTH.AUTH_LOGIN_SUCCESS: {
       return {
@@ -49,7 +49,7 @@ const authReducer = (state = initialState, action) => {
         username: _get(action, 'payload.username', ''),
         isAuthenticated: true,
         error: ''
-      }
+      };
     }
     case AUTH.AUTH_LOGIN_FAILURE: {
       return {
@@ -57,7 +57,7 @@ const authReducer = (state = initialState, action) => {
         isFetching: false,
         isAuthenticated: false,
         error: _get(action, 'payload.error', '')
-      }
+      };
     }
     case AUTH.AUTH_LOGOUT_SUCCESS: {
       return {
@@ -77,6 +77,6 @@ const authReducer = (state = initialState, action) => {
     default:
       return state;
   }
-}
+};
 
 export default authReducer;

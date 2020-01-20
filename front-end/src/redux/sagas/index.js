@@ -7,11 +7,5 @@ import posts from './posts';
 import userIdentity from './userIdentity';
 
 export default function* root() {
-  yield all([
-    fork(auth),
-    fork(detail),
-    fork(comments),
-    fork(posts),
-    fork(userIdentity)
-  ]);
+  yield all([fork(auth), fork(detail), fork(comments), fork(posts), fork(userIdentity)]);
 }

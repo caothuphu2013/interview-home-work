@@ -10,8 +10,8 @@ const register = (payload) => {
     username,
     password,
     name
-  })
-}
+  });
+};
 
 const login = (payload) => {
   const username = _get(payload, 'username', '');
@@ -26,4 +26,4 @@ const login = (payload) => {
 export default {
   register,
   login
-}
+};

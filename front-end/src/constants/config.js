@@ -1,17 +1,5 @@
 export const TAGS = {
-  COLORS: [
-    "magenta",
-    "red",
-    "volcano",
-    "orange",
-    "gold",
-    "lime",
-    "green",
-    "cyan",
-    "blue",
-    "geekblue",
-    "purple"
-  ]
+  COLORS: ['magenta', 'red', 'volcano', 'orange', 'gold', 'lime', 'green', 'cyan', 'blue', 'geekblue', 'purple']
 };
 
 export const RoutePath = {
@@ -22,4 +10,3 @@ export const RoutePath = {
   home: '/',
   post: '/post/:id'
 };
-

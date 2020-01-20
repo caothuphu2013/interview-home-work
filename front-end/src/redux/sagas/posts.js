@@ -9,11 +9,7 @@ import usersServices from '../../services/users';
 
 export function* getAllPosts() {
   try {
-    const [ comments, posts, usersData ] = yield all([
-      call(commentsServices.getAllComments),
-      call(postsServices.getAllPosts),
-      call(usersServices.getAllUsers)
-    ]);
+    const [comments, posts, usersData] = yield all([call(commentsServices.getAllComments), call(postsServices.getAllPosts), call(usersServices.getAllUsers)]);
     const response = yield call(postsServices.formatPosts, posts, comments, usersData);
     yield put(postsActions.getAllPostsSuccess(response));
   } catch (error) {
@@ -33,8 +29,5 @@ export function* searchPosts(action) {
 }
 
 export default function* root() {
-  yield all([
-    takeEvery(POSTS.POSTS_GET_ALL_REQUEST, getAllPosts),
-    takeLatest(POSTS.POSTS_SEARCH_REQUEST, searchPosts)
-  ]);
+  yield all([takeEvery(POSTS.POSTS_GET_ALL_REQUEST, getAllPosts), takeLatest(POSTS.POSTS_SEARCH_REQUEST, searchPosts)]);
 }

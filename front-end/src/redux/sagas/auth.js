@@ -24,7 +24,7 @@ export function* login(action) {
     const response = yield call(authServices.login, payload);
     const { username, accessToken } = response.data;
     tokenUtils.setToken(accessToken);
-    yield put(authActions.loginSuccess({username, token: accessToken}));
+    yield put(authActions.loginSuccess({ username, token: accessToken }));
     yield put(userIdentityActions.getUserIdentityRequest(username));
   } catch (error) {
     const messageError = _get(error, 'response.data.messageError', 'Error');
@@ -38,9 +38,5 @@ export function* logout() {
 }
 
 export default function* root() {
-  yield all([
-    takeLatest(AUTH.AUTH_REGISTER_REQUEST, register),
-    takeLatest(AUTH.AUTH_LOGIN_REQUEST, login),
-    takeLatest(AUTH.AUTH_LOGOUT_REQUEST, logout)
-  ])
+  yield all([takeLatest(AUTH.AUTH_REGISTER_REQUEST, register), takeLatest(AUTH.AUTH_LOGIN_REQUEST, login), takeLatest(AUTH.AUTH_LOGOUT_REQUEST, logout)]);
 }

@@ -1,4 +1,4 @@
-import { POSTS } from "../../constants/actionTypes";
+import { POSTS } from '../../constants/actionTypes';
 
 export const getAllPostsRequest = () => ({
   type: POSTS.POSTS_GET_ALL_REQUEST

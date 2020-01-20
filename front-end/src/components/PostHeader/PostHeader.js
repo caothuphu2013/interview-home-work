@@ -11,9 +11,11 @@ const PostHeader = (props) => {
   const { title, tags, nameUser, created_at } = props;
   return (
     <div className="post-header">
-      <Title className="post-header__title" level={2}>{title}</Title>
+      <Title className="post-header__title" level={2}>
+        {title}
+      </Title>
       <Row type="flex" justify="space-between">
-        <Col span={6} >
+        <Col span={6}>
           <h3>Author: {nameUser} </h3>
           <h3>{formatDateByCreatedAt(created_at)}</h3>
         </Col>
@@ -23,6 +25,6 @@ const PostHeader = (props) => {
       </Row>
     </div>
   );
-}
+};
 
 export default PostHeader;

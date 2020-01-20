@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Form, Icon, Input, Button, Checkbox, Spin, Alert } from "antd";
-import "./styles.scss";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Form, Icon, Input, Button, Checkbox, Spin, Alert } from 'antd';
+import './styles.scss';
 const FormItem = Form.Item;
 
 const LoginForm = (props) => {
@@ -19,51 +19,34 @@ const LoginForm = (props) => {
 
   const formLayout = (
     <>
-      {error && (
-        <Alert
-          message="Error"
-          description={error}
-          type="error"
-          showIcon
-        />
-      )}
+      {error && <Alert message="Error" description={error} type="error" showIcon />}
 
       <br />
       <FormItem>
-        {getFieldDecorator("username", {
+        {getFieldDecorator('username', {
           rules: [
             {
               required: true,
-              message: "Please input your username!"
+              message: 'Please input your username!'
             }
           ]
-        })(
-          <Input
-            prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
-            placeholder="username"
-          />
-        )}
+        })(<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="username" />)}
       </FormItem>
       <FormItem>
-        {getFieldDecorator("password", {
-          rules: [{ required: true, message: "Please input your Password!" }]
-        })(
-          <Input.Password
-            prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
-            placeholder="Password"
-          />
-        )}
+        {getFieldDecorator('password', {
+          rules: [{ required: true, message: 'Please input your Password!' }]
+        })(<Input.Password prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Password" />)}
       </FormItem>
 
       <FormItem>
-        {getFieldDecorator("remember", {
-          valuePropName: "checked",
+        {getFieldDecorator('remember', {
+          valuePropName: 'checked',
           initialValue: true
         })(<Checkbox>Remember me</Checkbox>)}
         <Button type="primary" htmlType="submit" className="login-form__button">
           Login
         </Button>
-        Or <Link to='/register'>register now!</Link>
+        Or <Link to="/register">register now!</Link>
       </FormItem>
     </>
   );

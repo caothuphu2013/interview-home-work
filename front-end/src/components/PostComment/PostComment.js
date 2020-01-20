@@ -1,6 +1,6 @@
-import React from "react";
-import { Comment, List } from "antd";
-import { getDataSource } from "./PostCommentConfig";
+import React from 'react';
+import { Comment, List } from 'antd';
+import { getDataSource } from './PostCommentConfig';
 import './styles.scss';
 
 const PostComment = (props) => {
@@ -16,13 +16,7 @@ const PostComment = (props) => {
       dataSource={dataSource}
       renderItem={(item) => (
         <li>
-          <Comment
-            actions={item.actions}
-            author={item.author}
-            avatar={item.avatar}
-            content={item.content}
-            datetime={item.datetime}
-          />
+          <Comment actions={item.actions} author={item.author} avatar={item.avatar} content={item.content} datetime={item.datetime} />
         </li>
       )}
     />

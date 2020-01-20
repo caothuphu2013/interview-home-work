@@ -7,7 +7,7 @@ import RegisterForm from "../../components/RegisterForm";
 
 import * as authActions from '../../redux/actions/auth';
 
-const RegisterPage = props => {
+const RegisterPage = (props) => {
   const { isRegistered, isFetching, error, authActions } = props;
   if (isRegistered) {
     return <Redirect to='/login' />

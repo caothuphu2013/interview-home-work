@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 import "./styles.scss";
 const { Paragraph } = Typography;
 
-const PostContent = ({ content, idPost, isDetail }) => {
-  return (
+const PostContent = ({ content, idPost, isDetail }) => (
     <div className="post-content">
       {isDetail && <Paragraph>{content}</Paragraph>}
       {!isDetail && (
@@ -19,7 +18,6 @@ const PostContent = ({ content, idPost, isDetail }) => {
       )}
     </div>
   );
-};
 
 PostContent.propTypes = {
   content: PropTypes.string

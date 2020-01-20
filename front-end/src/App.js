@@ -8,7 +8,7 @@ import * as userIdentityActions from './redux/actions/userIdentity';
 import { bindActionCreators } from "redux";
 import "antd/dist/antd.css";
 
-const App = props => {
+const App = (props) => {
   const { authReducer, userIdentityActions } = props;
   const { isAuthenticated, username } = authReducer;
 
@@ -21,7 +21,7 @@ const App = props => {
   return (
     <Suspense fallback={<Spin/>}>
       <Switch>
-        {AppRoutes.getRoutes().map(route => {
+        {AppRoutes.getRoutes().map((route) => {
           if (route.isPrivate) {
             if (isAuthenticated) {
               return <Route key={route.path} {...route} />;

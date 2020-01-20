@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import "./styles.scss";
 const FormItem = Form.Item;
 
-const RegisterForm = props => {
+const RegisterForm = (props) => {
   const [ confirmDirty, setConfirmDirty ] = useState(false);
   const { form, isFetching, error, handleRegister } = props;
   const { getFieldDecorator } = form;
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     form.validateFields((err, values) => {
       if (!err) {
@@ -18,7 +18,7 @@ const RegisterForm = props => {
     });
   };
 
-  const handleConfirmBlur = e => {
+  const handleConfirmBlur = (e) => {
     const { value } = e.target;
     setConfirmDirty(confirmDirty || !!value);
   };

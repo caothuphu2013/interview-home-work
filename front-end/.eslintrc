@@ -1,0 +1,52 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "parser": "",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "globals": {
+    "render": true,
+    "shallow": true
+  },
+  "plugins": [
+    "import",
+    "jsx-a11y",
+    "react",
+    "sonarjs"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/recommended",
+		"plugin:jsx-a11y/recommended",
+		"plugin:react/recommended",
+		"plugin:sonarjs/recommended",
+  ],
+  "rules": {
+    "no-param-reassign": "off",
+    "function-paren-newline": "off",
+		"arrow-parens": ["error", "always"],
+		"arrow-body-style": [2, "as-needed"],
+		"comma-dangle": ["error", "only-multiline"],
+		"import/no-extraneous-dependencies": 0,
+		"import/prefer-default-export": 0,
+		"react/forbid-prop-types": 0,
+		"react/jsx-boolean-value": "off",
+		"react/jsx-curly-brace-presence": "off",
+		"react/jsx-first-prop-new-line": [2, "multiline"],
+		"react/jsx-filename-extension": "off",
+		"react/jsx-props-no-spreading": "off",
+		"react/require-default-props": 0,
+		"react/self-closing-comp": 0,
+		"jsx-a11y/anchor-is-valid": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "no-console": "error"
+  }
+}

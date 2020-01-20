@@ -14,7 +14,7 @@ const PostComment = (props) => {
       header={`${dataSource.length} ${dataSource.length > 1 ? 'replies' : 'reply'}`}
       itemLayout="horizontal"
       dataSource={dataSource}
-      renderItem={item => (
+      renderItem={(item) => (
         <li>
           <Comment
             actions={item.actions}

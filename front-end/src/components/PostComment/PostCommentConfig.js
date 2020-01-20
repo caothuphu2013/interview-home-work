@@ -2,8 +2,8 @@ import React from 'react';
 import { Tooltip } from 'antd';
 import moment from 'moment';
 
-export const getDataSource = comments =>
-  comments.map(comment => ({
+export const getDataSource = (comments) =>
+  comments.map((comment) => ({
     actions: [<span key="comment-list-reply-to-0">Reply to</span>],
     author: comment.nameUser,
     avatar: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",

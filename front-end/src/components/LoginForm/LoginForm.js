@@ -4,11 +4,11 @@ import { Form, Icon, Input, Button, Checkbox, Spin, Alert } from "antd";
 import "./styles.scss";
 const FormItem = Form.Item;
 
-const LoginForm = props => {
+const LoginForm = (props) => {
   const { form, isFetching, error, handleLogin } = props;
   const { getFieldDecorator } = form;
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     form.validateFields((err, values) => {
       if (!err) {

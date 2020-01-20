@@ -7,9 +7,9 @@ export const getBaseUrl = (api = API) => api.replace(/\/$/, ''); // Remove the l
 export const getUrl = (url) => (url.match(/^(http|https):\/\//) ? url : `${getBaseUrl()}/${url}`);
 
 const appFetch = {
-  get: (url, options) => axios.get(`${getUrl(url)}`, options).then(res => res.data),
-  post: (url, options) => axios.post(`${getUrl(url)}`, options).then(res => res.data),
-  put: (url, options) => axios.put(`${getUrl(url)}`, options).then(res => res.data)
+  get: (url, options) => axios.get(`${getUrl(url)}`, options).then((res) => res.data),
+  post: (url, options) => axios.post(`${getUrl(url)}`, options).then((res) => res.data),
+  put: (url, options) => axios.put(`${getUrl(url)}`, options).then((res) => res.data)
 };
 
 export default appFetch;
